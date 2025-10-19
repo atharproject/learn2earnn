@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn2Earn - Jobs</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Learn2Earn Logo" class="logo" />
+      <h1>Learn2Earn</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resources.html">Resources</a>
+      <a href="training.html">Training</a>
+      <a href="jobs.html" class="active">Jobs</a>
+      <a href="career.html">Career Tools</a>
+      <a href="community.html">Community</a>
+      <a href="register.html">Register</a>
+    </nav>
+  </header>
+
+  <section class="hero small-hero">
+    <h2>Job Opportunities</h2>
+    <p>Find your next career — connect with top employers and organizations.</p>
+  </section>
+
+  <main class="jobs-container">
+    <div class="job-filter">
+      <input type="text" id="searchInput" placeholder="Search by title or keyword..." />
+      <select id="categorySelect">
+        <option value="all">All Categories</option>
+        <option value="tech">Technology</option>
+        <option value="business">Business</option>
+        <option value="health">Health</option>
+      </select>
+    </div>
+
+    <div class="job-list" id="jobList">
+      <div class="job-card" data-category="tech">
+        <h3>Frontend Developer</h3>
+        <p>Company: InnovateX</p>
+        <p>Location: Remote</p>
+        <button>Apply</button>
+      </div>
+
+      <div class="job-card" data-category="business">
+        <h3>Marketing Assistant</h3>
+        <p>Company: BrightWave</p>
+        <p>Location: London</p>
+        <button>Apply</button>
+      </div>
+
+      <div class="job-card" data-category="health">
+        <h3>Healthcare Coordinator</h3>
+        <p>Company: LifeCare</p>
+        <p>Location: Berlin</p>
+        <button>Apply</button>
+      </div>
+
+      <div class="job-card" data-category="tech">
+        <h3>Data Analyst</h3>
+        <p>Company: InsightIQ</p>
+        <p>Location: New York</p>
+        <button>Apply</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Learn2Earn. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const categorySelect = document.getElementById("categorySelect");
+    const jobList = document.getElementById("jobList");
+    const jobs = jobList.querySelectorAll(".job-card");
+
+    function filterJobs() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const category = categorySelect.value;
+
+      jobs.forEach(job => {
+        const text = job.textContent.toLowerCase();
+        const matchCategory = category === "all" || job.dataset.category === category;
+        job.style.display = (text.includes(searchTerm) && matchCategory) ? "block" : "none";
+      });
+    }
+
+    searchInput.addEventListener("input", filterJobs);
+    categorySelect.addEventListener("change", filterJobs);
+  </script>
+</body>
+</html>

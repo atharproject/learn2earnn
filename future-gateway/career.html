@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn2Earn - Career Tools</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Learn2Earn Logo" class="logo" />
+      <h1>Learn2Earn</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resources.html">Resources</a>
+      <a href="training.html">Training</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="career.html" class="active">Career Tools</a>
+      <a href="community.html">Community</a>
+      <a href="register.html">Register</a>
+    </nav>
+  </header>
+
+  <section class="hero small-hero">
+    <h2>Career Development Tools</h2>
+    <p>Assess your skills, plan your career path, and get personalized guidance.</p>
+  </section>
+
+  <main class="career-container">
+    <section class="skill-test">
+      <h3>Skill Self-Assessment</h3>
+      <p>Answer these quick questions to identify your strengths.</p>
+
+      <div class="quiz">
+        <label>1. How confident are you with digital tools?</label><br>
+        <select id="q1">
+          <option value="0">Select</option>
+          <option value="1">Not confident</option>
+          <option value="2">Somewhat confident</option>
+          <option value="3">Very confident</option>
+        </select><br><br>
+
+        <label>2. How often do you work on problem-solving tasks?</label><br>
+        <select id="q2">
+          <option value="0">Select</option>
+          <option value="1">Rarely</option>
+          <option value="2">Sometimes</option>
+          <option value="3">Frequently</option>
+        </select><br><br>
+
+        <label>3. How comfortable are you working in a team?</label><br>
+        <select id="q3">
+          <option value="0">Select</option>
+          <option value="1">Not comfortable</option>
+          <option value="2">Neutral</option>
+          <option value="3">Very comfortable</option>
+        </select><br><br>
+
+        <button id="calculateBtn">Evaluate Skills</button>
+      </div>
+
+      <div id="resultBox" class="result"></div>
+    </section>
+
+    <section class="career-advice">
+      <h3>Career Advice & Guidance</h3>
+      <ul>
+        <li><a href="#">📘 Resume Building Guide (PDF)</a></li>
+        <li><a href="#">🎯 Online Interview Preparation Course</a></li>
+        <li><a href="#">💼 Career Path Planning Tool</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Learn2Earn. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const calculateBtn = document.getElementById("calculateBtn");
+    const resultBox = document.getElementById("resultBox");
+
+    calculateBtn.addEventListener("click", () => {
+      const q1 = parseInt(document.getElementById("q1").value);
+      const q2 = parseInt(document.getElementById("q2").value);
+      const q3 = parseInt(document.getElementById("q3").value);
+
+      if (!q1 || !q2 || !q3) {
+        resultBox.innerHTML = "<p style='color:red;'>⚠️ Please answer all questions.</p>";
+        return;
+      }
+
+      const total = q1 + q2 + q3;
+      let feedback = "";
+
+      if (total <= 4) feedback = "Beginner — start improving your digital and teamwork skills.";
+      else if (total <= 6) feedback = "Intermediate — keep developing problem-solving and collaboration.";
+      else feedback = "Advanced — excellent! Consider leadership or mentorship opportunities.";
+
+      resultBox.innerHTML = `<div class='feedback'><h4>Your Level:</h4><p>${feedback}</p></div>`;
+    });
+  </script>
+</body>
+</html>

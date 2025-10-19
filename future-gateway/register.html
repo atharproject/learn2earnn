@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn2Earn - Register</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Learn2Earn Logo" class="logo" />
+      <h1>Learn2Earn</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resources.html">Resources</a>
+      <a href="training.html">Training</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="career.html">Career Tools</a>
+      <a href="community.html">Community</a>
+      <a href="register.html" class="active">Register</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero small-hero">
+    <h2>Create Your Account</h2>
+    <p>Register or log in to access personalized features.</p>
+  </section>
+
+  <!-- ===== AUTH SECTION ===== -->
+  <main class="auth-container">
+    <div class="auth-box">
+      <h3>Register</h3>
+      <form id="registerForm">
+        <input type="text" id="regName" placeholder="Full Name" required />
+        <input type="email" id="regEmail" placeholder="Email" required />
+        <input type="password" id="regPassword" placeholder="Password" required />
+        <button type="submit">Register</button>
+      </form>
+    </div>
+
+    <div class="auth-box">
+      <h3>Login</h3>
+      <form id="loginForm">
+        <input type="email" id="logEmail" placeholder="Email" required />
+        <input type="password" id="logPassword" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; 2025 Learn2Earn. All rights reserved.</p>
+  </footer>
+
+  <!-- Optional simple JS form handler -->
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", e => {
+      e.preventDefault();
+      alert("✅ Registration successful! Welcome to Learn2Earn.");
+    });
+
+    document.getElementById("loginForm").addEventListener("submit", e => {
+      e.preventDefault();
+      alert("✅ Login successful! Redirecting to dashboard...");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,523 @@
+/* =======================================
+   Future Gateway - Global Styles
+   ======================================= */
+
+/* 🌍 Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f5f7fb;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* =========================
+   HEADER & NAVIGATION
+   ========================= */
+header {
+  background: #004aad;
+  color: #fff;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav a {
+  color: #fff;
+  margin: 6px 12px;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+/* =========================
+   HERO SECTION
+   ========================= */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #004aad, #0072ff);
+  color: #fff;
+}
+
+.hero h2 {
+  font-size: 2.2em;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1em;
+}
+
+.hero button {
+  background: #fff;
+  color: #004aad;
+  border: none;
+  padding: 12px 25px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  background: #e6e6e6;
+}
+
+/* =========================
+   FEATURE CARDS
+   ========================= */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 60px 10px;
+  gap: 25px;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+footer {
+  text-align: center;
+  background: #004aad;
+  color: #fff;
+  padding: 15px;
+  margin-top: 60px;
+  font-size: 0.95em;
+}
+
+/* =========================
+   ABOUT PAGE
+   ========================= */
+.about-container {
+  max-width: 900px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-container h3 {
+  color: #004aad;
+  margin-bottom: 10px;
+}
+
+.about-container p {
+  margin-bottom: 25px;
+}
+
+.values ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.values li {
+  background: #f3f6ff;
+  padding: 10px 15px;
+  border-left: 5px solid #004aad;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.member {
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 10px;
+  width: 240px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+.member h4 {
+  margin: 5px 0;
+  color: #004aad;
+}
+
+/* =========================
+   TRAINING PAGE
+   ========================= */
+.training-container {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.training-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.training-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.training-card:hover {
+  transform: translateY(-5px);
+}
+
+.training-card h3 {
+  color: #004aad;
+}
+
+.training-card button {
+  background: #004aad;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.training-card button:hover {
+  background: #003580;
+}
+
+/* =========================
+   RESOURCES PAGE
+   ========================= */
+.resources-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.filter-bar {
+  margin-bottom: 25px;
+  text-align: right;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.resource-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  transition: transform 0.3s;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+}
+
+.resource-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #004aad;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* =========================
+   JOBS PAGE
+   ========================= */
+.jobs-container {
+  max-width: 950px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.job-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+  justify-content: space-between;
+}
+
+.job-filter input,
+.job-filter select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  flex: 1;
+  min-width: 180px;
+}
+
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.job-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+}
+
+.job-card button {
+  background: #004aad;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.job-card button:hover {
+  background: #003580;
+}
+
+/* =========================
+   CAREER PAGE
+   ========================= */
+.career-container {
+  max-width: 800px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.skill-test,
+.career-advice,
+.motivation {
+  margin-bottom: 40px;
+}
+
+.skill-test select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.skill-test button {
+  background: #004aad;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.result {
+  margin-top: 20px;
+  background: #f3f6ff;
+  border-left: 5px solid #004aad;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.career-advice a {
+  text-decoration: none;
+  color: #004aad;
+}
+
+.motivation {
+  text-align: center;
+  font-style: italic;
+}
+
+.motivation blockquote {
+  font-size: 1.1em;
+  background: #eef3ff;
+  border-left: 5px solid #004aad;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.motivation .author {
+  margin-top: 10px;
+  color: #666;
+  font-size: 0.9em;
+}
+
+/* =========================
+   COMMUNITY PAGE
+   ========================= */
+.community-container {
+  max-width: 800px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-post textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.create-post button {
+  margin-top: 10px;
+  background: #004aad;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.post {
+  background: #f3f6ff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border-left: 5px solid #004aad;
+}
+
+.posts .time {
+  display: block;
+  text-align: right;
+  font-size: 0.8em;
+  color: #777;
+  margin-top: 5px;
+}
+
+/* =========================
+   AUTH (Register/Login)
+   ========================= */
+.auth-container {
+  max-width: 700px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.auth-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  text-align: center;
+}
+
+.auth-box input {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-box button {
+  background: #004aad;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-box button:hover {
+  background: #003580;
+}
+
+/* =========================
+   RESPONSIVENESS
+   ========================= */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+  .auth-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+

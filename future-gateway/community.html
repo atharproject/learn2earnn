@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn2Earn - Community</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Learn2Earn Logo" class="logo" />
+      <h1>Learn2Earn</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resources.html">Resources</a>
+      <a href="training.html">Training</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="career.html">Career Tools</a>
+      <a href="community.html" class="active">Community</a>
+      <a href="register.html">Register</a>
+    </nav>
+  </header>
+
+  <section class="hero small-hero">
+    <h2>Community Forum</h2>
+    <p>Connect with peers, ask questions, and share your learning journey.</p>
+  </section>
+
+  <main class="community-container">
+    <!-- Create a post -->
+    <section class="create-post">
+      <h3>Share Something with the Community</h3>
+      <textarea id="postText" placeholder="What's on your mind?" rows="4"></textarea>
+      <button id="postBtn">Post</button>
+    </section>
+
+    <!-- Posts section -->
+    <section class="posts">
+      <h3>Recent Posts</h3>
+      <div id="postList">
+        <!-- Posts appear here dynamically -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Learn2Earn. All rights reserved.</p>
+  </footer>
+
+  <!-- ===== JS ===== -->
+  <script>
+    const postBtn = document.getElementById("postBtn");
+    const postText = document.getElementById("postText");
+    const postList = document.getElementById("postList");
+
+    // Load saved posts
+    window.onload = function () {
+      const saved = JSON.parse(localStorage.getItem("communityPosts")) || [];
+      saved.forEach(addPostToDOM);
+    };
+
+    // Add new post
+    postBtn.addEventListener("click", () => {
+      const text = postText.value.trim();
+      if (!text) {
+        alert("Please write something first.");
+        return;
+      }
+
+      const post = {
+        text,
+        time: new Date().toLocaleString(),
+      };
+
+      addPostToDOM(post);
+      savePost(post);
+      postText.value = "";
+    });
+
+    // Append post to DOM
+    function addPostToDOM(post) {
+      const div = document.createElement("div");
+      div.className = "post";
+      div.innerHTML = `
+        <p>${post.text}</p>
+        <span class="time">${post.time}</span>
+      `;
+      postList.prepend(div);
+    }
+
+    // Save posts to localStorage
+    function savePost(post) {
+      const existing = JSON.parse(localStorage.getItem("communityPosts")) || [];
+      existing.push(post);
+      localStorage.setItem("communityPosts", JSON.stringify(existing));
+    }
+  </script>
+</body>
+</html>
+

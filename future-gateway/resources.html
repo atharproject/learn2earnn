@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn2Earn - Resources</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Learn2Earn Logo" class="logo" />
+      <h1>Learn2Earn</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resources.html" class="active">Resources</a>
+      <a href="training.html">Training</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="career.html">Career Tools</a>
+      <a href="community.html">Community</a>
+      <a href="register.html">Register</a>
+    </nav>
+  </header>
+
+  <section class="hero small-hero">
+    <h2>Educational Resources</h2>
+    <p>Access e-books, videos, and interactive courses to boost your learning.</p>
+  </section>
+
+  <main class="resources-container">
+    <div class="filter-bar">
+      <label for="category">Filter by Type:</label>
+      <select id="category">
+        <option value="all">All</option>
+        <option value="ebook">E-Books</option>
+        <option value="video">Videos</option>
+        <option value="course">Courses</option>
+      </select>
+    </div>
+
+    <div class="resource-grid" id="resourceGrid">
+      <div class="resource-card" data-type="ebook">
+        <h3>Intro to Data Science</h3>
+        <p>A complete e-book for beginners in data analysis and visualization.</p>
+        <a href="#">📘 Download</a>
+      </div>
+
+      <div class="resource-card" data-type="video">
+        <h3>Leadership Essentials</h3>
+        <p>Watch a short video on leadership and communication strategies.</p>
+        <a href="#">🎥 Watch</a>
+      </div>
+
+      <div class="resource-card" data-type="course">
+        <h3>Python Programming</h3>
+        <p>Interactive coding exercises to learn Python step by step.</p>
+        <a href="#">💻 Enroll</a>
+      </div>
+
+      <div class="resource-card" data-type="ebook">
+        <h3>Marketing Fundamentals</h3>
+        <p>Learn about SEO, content marketing, and social media strategies.</p>
+        <a href="#">📗 Download</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Learn2Earn. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const categorySelect = document.getElementById("category");
+    const resourceGrid = document.getElementById("resourceGrid");
+
+    categorySelect.addEventListener("change", () => {
+      const selected = categorySelect.value;
+      const cards = resourceGrid.querySelectorAll(".resource-card");
+      cards.forEach(card => {
+        const type = card.getAttribute("data-type");
+        card.style.display = (selected === "all" || type === selected) ? "block" : "none";
+      });
+    });
+  </script>
+</body>
+</html>
+
